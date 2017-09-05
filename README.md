@@ -1,8 +1,6 @@
 # CCOW ContextManager
 
-**UPDATE JUNE 2016**
-
-This project is continued by [SIRENIA](http://sirenia.eu). If you are looking for a production-ready, battle-hardened and very, very cost-effective beast of a Context Manager then [this](http://sirenia.eu) is the place to go.
+This project is fork from original [CCOW](jonathanbp/ccow.contextmanager), coffeescript has been decaffinated into ES6. 
 
 ---
 
@@ -35,13 +33,10 @@ Currently the ContextManager manages a single context and the following kind of 
 
 ## Install
 
-Requires `node`, `npm` and `coffee-script` and installation is then mostly easily done with `npm`:
+Requires `node` and `npm`. Installation is then mostly easily done with `npm`:
 
-    $ npm install -g coffee-script
-    ...
     $ npm install -g ccow.contextmanager
     ...
-
 
 ## Run
 
@@ -51,6 +46,8 @@ Use the `ctxmgr` command which starts a server on port 3000.
 
 
 ## Changelog
+### 0.0.3 (2017-09-01)
+  * ES6 conversion, updates on libraries
 
 ### 0.0.25 (2013-12-02)
 
