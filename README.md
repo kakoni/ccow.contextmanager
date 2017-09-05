@@ -46,30 +46,11 @@ Use the `npm run start` command which starts a server on port 3000.
 
 
 ## Changelog
-### 0.0.3 (2017-09-01)
-  * ES6 conversion, updates on libraries
-
-### 0.0.25 (2013-12-02)
-
- * Fixing minor issue w serialization.
-
-### 0.0.11-24
-
- * Frantic bug fixing.
- * Implemented more `ContextParticipant` methods.
 
 ### 0.0.10
 
- * Fixed a _ bug.
+ * First release.
 
-### 0.0.9
-
- * Now returning a 
-
-      noContinue: [boolean]
-      responses: string[]
-
-  from `ContextManager.EndContextChanges`.
 
 ## Status
 
@@ -79,7 +60,7 @@ Current status is a basic implementation of ContextManager, ContextParticipant a
 
 The MIT License (MIT)
 
-Copyright (c) 2012 Jonathan Bunde-Pedersen
+Copyright (c) 2012, 2017 Jonathan Bunde-Pedersen, Karri Niemelä
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
