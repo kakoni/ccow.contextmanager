@@ -31,13 +31,6 @@ Currently the ContextManager manages a single context and the following kind of 
     CP ==>    LeaveCommonContext(participantCoupon)                       ==> CM
     CP <--    OK                                                          <-- CM
 
-## Install
-
-Requires `node` and `npm`. Installation is then mostly easily done with `npm`:
-
-    $ npm install -g ccow.contextmanager
-    ...
-
 ## Run
 
 Use the `npm run start` command which starts a server on port 3000. 
