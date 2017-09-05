@@ -49,7 +49,7 @@ Use the `npm run start` command which starts a server on port 3000.
 
 ### 0.0.10
 
- * First release.
+ * First ES6 release.
 
 
 ## Status
