@@ -40,9 +40,9 @@ Requires `node` and `npm`. Installation is then mostly easily done with `npm`:
 
 ## Run
 
-Use the `ctxmgr` command which starts a server on port 3000. 
+Use the `npm run start` command which starts a server on port 3000. 
 
-    $ ctxmgr
+    $ npm run start
 
 
 ## Changelog
