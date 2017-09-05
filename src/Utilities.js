@@ -6,16 +6,16 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const _ = require('lodash');
+import _ from 'lodash';
 
 // basic utilities
-var clone = function(obj) {
+export const clone = function(obj) {
   if ((obj == null) || (typeof obj !== 'object')) {
     return obj;
   }
 
   if (obj instanceof Date) {
-    return new Date(obj.getTime()); 
+    return new Date(obj.getTime());
   }
 
   if (obj instanceof RegExp) {
@@ -24,7 +24,7 @@ var clone = function(obj) {
     if (obj.ignoreCase != null) { flags += 'i'; }
     if (obj.multiline != null) { flags += 'm'; }
     if (obj.sticky != null) { flags += 'y'; }
-    return new RegExp(obj.source, flags); 
+    return new RegExp(obj.source, flags);
   }
 
   const newInstance = new obj.constructor();
@@ -43,14 +43,14 @@ class Format {
   generateHAP(hap) { return hap.join("^"); }
   parseList(list) { return list.split("|"); }
   generateList(list) { return list.join("|"); }
-  parseObject(obj) { 
+  parseObject(obj) {
     // if it is a basic type simply return
     if ((obj.indexOf("^") + obj.indexOf("|") + obj.indexOf("&")) < 0) { return obj; }
     // if compound object, i.e. key1=value1&key2=value2 ...
     if (obj.indexOf("&") > 0) {
       const kvs = obj.split("&") || [];
       return _.reduce(
-        kvs, 
+        kvs,
         ((memo, kv) => {
           const [key, value] = Array.from(kv.split("="));
           memo[key] = this.parseObject(value);
@@ -63,7 +63,7 @@ class Format {
     } else if (obj.indexOf("|") > 0) {
       return this.parseList(obj);
     // if hatted, e.g. a^b^b
-    } else { 
+    } else {
       return this.parseHAP(obj);
     }
   }
@@ -75,9 +75,9 @@ class Format {
       return this.generateList(obj);
     } else {
       return _.reduce(
-        obj, 
+        obj,
         ((memo, value, key) => {
-          memo.push(`${key}=${this.generateObject(value)}`); 
+          memo.push(`${key}=${this.generateObject(value)}`);
           return memo;
         }
         ),
@@ -113,7 +113,7 @@ class CX extends Format {
     ] = Array.from(this.parseHAP(hap));
   }
 
-  serialize() { 
+  serialize() {
     return this.generateHAP([
       this.id,
       this.checkdigit,
@@ -127,7 +127,7 @@ class CX extends Format {
   }
 }
 
-const reply = formatter => 
+const reply = formatter =>
   function(req, res, data) {
     if ((data != null ? data.status : undefined) != null) { res.status(data.status); }
     if (req.accepts("json") != null) {
@@ -138,9 +138,9 @@ const reply = formatter =>
   }
 ;
 
-const formatter = new Format();
+export const formatter = new Format();
 
-module.exports = { 
+module.exports = {
   formatter,
   reply: reply(formatter),
   clone

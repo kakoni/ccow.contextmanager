@@ -6,15 +6,15 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const { clone } = require("./Utilities.js");
-const events = require('events');
-const Q = require('q');
-const logger = require('winston');
-const _ = require('lodash');
-const uuid = require('node-uuid');
+import { clone } from './Utilities';
+import events from 'events';
+import Q from 'q';
+import logger from 'winston';
+import _ from 'lodash';
+import uuid from 'node-uuid';
 
-const { ContextParticipant } = require("./ContextParticipant.js");
-const { ContextParticipantProxy } = require("./ContextParticipant.js");
+import { ContextParticipant }  from './ContextParticipant'
+import { ContextParticipantProxy } from './ContextParticipant'
 
 
 //
@@ -114,10 +114,9 @@ export default class ContextManager extends events.EventEmitter {
     }
 
     // call ContextChangesPending on all ContextParticipants
-
-    const responses = this.context.participants.filter(function(participant) {
+    const responses = this.context.participants.filter((participant) => {
       participant.coupon !== (this.context.sessions[contextCoupon] != null ? this.context.sessions[contextCoupon].owner : undefined)
-    }).map((participant) => participant.ContextChangesPending(contextCoupon));
+    }).map(participant => participant.ContextChangesPending(contextCoupon));
 
     const defer = Q.defer();
 

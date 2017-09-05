@@ -1,12 +1,6 @@
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-const should = require('should');
-const f = require("../Utilities.js").formatter;
-
-const Q = require('q');
+import should from 'should'
+import Q from 'q'
+import { formatter as f} from '../src/Utilities';
 
 should.exist(f);
 

@@ -5,12 +5,12 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const url = require('url');
-const Q = require('q');
-const { formatter } = require('./Utilities.js');
-const winston = require('winston');
+import url  from 'url';
+import Q from 'q';
+import { formatter } from './Utilities';
+import winston from 'winston';
 
-export default class ContextParticipant {
+export class ContextParticipant {
 
   constructor(coupon,applicationName) {
     this.coupon = coupon;
@@ -45,7 +45,7 @@ export default class ContextParticipant {
   }
 }
 
-class ContextParticipantProxy extends ContextParticipant {
+export class ContextParticipantProxy extends ContextParticipant {
 
   constructor(coupon, applicationName, url1, http = require("http")) {
     super(coupon, applicationName);

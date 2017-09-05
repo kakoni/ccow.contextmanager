@@ -1,15 +1,6 @@
-/*
- * decaffeinate suggestions:
- * DS001: Remove Babel/TypeScript constructor workaround
- * DS101: Remove unnecessary use of Array.from
- * DS102: Remove unnecessary code created because of implicit returns
- * DS202: Simplify dynamic range loops
- * DS207: Consider shorter variations of null checks
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-const events = require('events');
-const logger = require('winston');
-const _ = require('lodash');
+import events from 'events'
+import logger from 'winston'
+import _ from 'lodash'
 
 export default class ContextData extends events.EventEmitter {
 

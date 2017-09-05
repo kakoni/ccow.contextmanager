@@ -1,5 +1,5 @@
-const io = require('socket.io-client');
-const prompt = require("prompt");
+import io from 'socket.io-client';
+import prompt from 'prompt';
 
 
 const socket = io.connect("http://localhost:3000");
